@@ -3,6 +3,7 @@ const uniqueValidator = require('mongoose-unique-validator'); // Plugin qui va v
 
 const userSchema = mongoose.Schema({
   userId: {type: String, required: false},                  //on  ne requiert pas l’ID à l’inscription c’est MongoDB qui se chargera de lui attribuer un ID
+  pseudo: {type: String, required: true, unique: true},
   email: { type: String, required: true, unique: true },    //On a besoin d’une adresse mail , puis on s’assure qu’elle est unique.
   password: { type: String, required: true }                //on a besoin du password de l’user 
 });
